@@ -1,0 +1,16 @@
+package interfaces
+
+type Descargable interface {
+	Descargar() error
+}
+
+// Implementación de entidad Libro
+
+func (l *Libro) Descargar() error {
+
+	if !l.disponible {
+		return ErrLibroNoDisponible
+	}
+
+	return nil
+}

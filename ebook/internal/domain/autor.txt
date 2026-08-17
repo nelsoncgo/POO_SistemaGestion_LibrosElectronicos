@@ -1,0 +1,9 @@
+package domain
+
+// Entidad Autor
+
+type Autor struct {
+	id            int
+	nombre        string
+	nacionalidad  string
+}

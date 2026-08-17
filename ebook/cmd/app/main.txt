@@ -1,0 +1,22 @@
+package main
+
+import (
+	"log"
+
+	"ebook/internal/config"
+)
+
+func main() {
+
+	db, err := config.NewMySQL(
+		"root:root@tcp(localhost:3306)/ebooks",
+	)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer db.Close()
+
+	log.Println("Conexión exitosa")
+}

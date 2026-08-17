@@ -1,0 +1,25 @@
+package interfaces
+
+import "ebook/internal/domain"
+
+// Operaciones CRU Libro
+type LibroRepository interface {
+
+	Crear(
+		libro *domain.Libro,
+	) error
+
+	BuscarPorID(
+		id int,
+	) (*domain.Libro, error)
+
+	Listar() ([]domain.Libro, error)
+
+	Actualizar(
+		libro *domain.Libro,
+	) error
+
+	Eliminar(
+		id int,
+	) error
+}
